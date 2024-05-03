@@ -1,7 +1,6 @@
 // Exercise 1: Get the array of all directors.
 function getAllDirectors(array) {
   let result = array.map((movie) => movie.director);
-  console.log('EXERCICE 1 ->', result);
   return result;
 }
 
@@ -85,7 +84,18 @@ function hoursToMinutes(array) {
 }
 
 // Exercise 8: Get the best film of a year
-function bestFilmOfYear() {}
+function bestFilmOfYear(array, year) {
+  const newArray = [...array];
+  let maxScore = 0;
+  return newArray
+    .filter((movie) => {
+      if (movie.year === year) {
+        if (movie.score > maxScore) maxScore = movie.score;
+        return movie;
+      }
+    })
+    .filter((movie) => movie.score === maxScore);
+}
 
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */
