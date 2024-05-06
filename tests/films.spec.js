@@ -304,7 +304,7 @@ describe('Function "moviesAverageByCategory"', () => {
   it('should return 0 if no exist any movie of a category', () => {
     expect(moviesAverageByCategory(movies, 'noCategory')).toBe(Number('0.00'));
   });
-  it('second parameter cannot be an empty string', () => {
+  it('should return 0 if second parameter is an empty string', () => {
     expect(moviesAverageByCategory(movies, '')).toBe(Number('0.00'));
   });
   it('second parameter must be a string', () => {
